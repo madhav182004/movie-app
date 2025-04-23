@@ -12,7 +12,7 @@ interface Card {
 const MovieCard: React.FC<Card> = ({ movie_id, title, rating, posterUrl }) => {
   return (
     <Link href={`/movie/${movie_id}`} passHref>
-        <div className='max-w-xs bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg cursor-pointer'>
+        <div className='max-w-xs bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg cursor-pointer h-auto'>
             <div className="relative w-full h-96">
                 <Image
                     src={posterUrl}
@@ -23,7 +23,7 @@ const MovieCard: React.FC<Card> = ({ movie_id, title, rating, posterUrl }) => {
                     quality={100}
                 />
             </div>
-            <div className="p-4">
+            <div className="p-4 h-32 md:h-auto">
                 <h3 className="text-lg font-bold-mb-2">
                     {title}
                 </h3>
