@@ -66,7 +66,7 @@ const Header = () => {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search..."
-                                className="w-full px-4 py-2 rounded-l-md text-black"
+                                className="w-full px-4 py-2 rounded-l-md text-black bg-white"
                             />
                             <button type="submit" className="px-4 py-2 bg-gray-700 rounded-r-md hover:bg-gray-600">
                                 Search
