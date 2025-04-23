@@ -4,8 +4,8 @@ import MovieCard from "../components/MovieCard";
 import SkeletonLoading from "../components/SkeletonLoading";
 import { useSearchParams } from "next/navigation";
 
-const Api_key = "c45a857c193f6302f2b5061c3b85e743";
-;
+const Api_key = process.env.NEXT_PUBLIC_API_KEY;
+
 const HomePage = () => {
 
   const [page, setPage] = useState(1)
@@ -47,14 +47,14 @@ const HomePage = () => {
   return (
     <>
       <div>
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl font-bold text-center md:text-left pb-4">
           {
             search ? 'Search Result for '+ search : 'Popular Movies'
           }
         </h2>
       </div>
 
-      <div className="flex justify-center mb-4">
+      {/* <div className="flex justify-center mb-4">
         <button 
           onClick={() => setPage(prev => Math.max(prev - 1, 1))}
           disabled={page === 1}
@@ -66,7 +66,7 @@ const HomePage = () => {
           onClick={() => setPage(prev => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
           className="px-4 py-2 bg-gray-300 text-gray-700 rounded-r-lg disabled:opacity-50">Next</button>
-      </div>
+      </div> */}
       
       {
         loading ? <SkeletonLoading /> : <div className="mx-4 my-8 grid grid-cols-2 md:grid-cols-4 gap-5">

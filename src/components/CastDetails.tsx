@@ -6,7 +6,7 @@ const CastDetails = ({ movie_id }: any) => {
     useEffect(() => {
         const fetchCastDetails = async () => {
             try {
-                const Api_key = 'c45a857c193f6302f2b5061c3b85e743';
+                const Api_key = process.env.NEXT_PUBLIC_API_KEY;
                 const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${Api_key}&language=en-US`);
                 const data = await response.json();
                 setCast(data.cast);
@@ -26,7 +26,7 @@ const CastDetails = ({ movie_id }: any) => {
                 {cast.map((actor: any) => (
                     <div
                         key={actor.id}
-                        className="w-full bg-white rounded-lg overflow-hidden shadow-lg"
+                        className="w-full bg-gray-400 rounded-lg overflow-hidden shadow-lg"
                     >
                         <img
                             src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : fallbackImage} // Using fallback image if profile_path is missing **
@@ -35,8 +35,8 @@ const CastDetails = ({ movie_id }: any) => {
                         />
                         <div className="p-4">
                             <h3 className="text-lg font-semibold text-gray-800">{actor.name}</h3>
-                            <p className="text-gray-600">Character: {actor.character}</p>
-                            <p className="text-gray-500">Popularity: {actor.popularity.toFixed(2)}</p>
+                            <p className="text-gray-700">Character: {actor.character}</p>
+                            <p className="text-gray-600">Popularity: {actor.popularity.toFixed(2)}</p>
                         </div>
                     </div>
                 ))}

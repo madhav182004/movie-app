@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import CastDetails from '@/components/CastDetails';
 
-const Api_key = "c45a857c193f6302f2b5061c3b85e743";
+const Api_key = process.env.NEXT_PUBLIC_API_KEY;
 
 const SingleDetailPage: React.FC = ({ params }: any) => {
 

@@ -11,7 +11,7 @@ interface Card {
 
 const MovieCard: React.FC<Card> = ({ movie_id, title, rating, posterUrl }) => {
   return (
-    <Link href={`/singleDetail/${movie_id}`} passHref>
+    <Link href={`/movie/${movie_id}`} passHref>
         <div className='max-w-xs bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg cursor-pointer'>
             <div className="relative w-full h-96">
                 <Image
