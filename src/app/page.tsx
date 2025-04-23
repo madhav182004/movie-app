@@ -73,7 +73,7 @@ const HomePage = () => {
         {
           !allMovies ? 'Loading...' : allMovies?.length === 0 ? 'No movies found' : 
           allMovies.map((movie: any, index: number) => (
-            <MovieCard key={index} title={movie.title} rating={movie.vote_average} posterUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+            <MovieCard key={index} movie_id={movie.id} title={movie.title} rating={movie.vote_average} posterUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
           ))
         }
         </div>
