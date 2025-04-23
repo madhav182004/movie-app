@@ -1,8 +1,8 @@
-'use client'
-import MovieCard from '@/components/MovieCard'
-import SkeletonLoading from '@/components/SkeletonLoading'
-import { useSearchParams } from 'next/navigation'
+"use client"
 import React, { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import MovieCard from '@/components/MovieCard';
+import SkeletonLoading from '@/components/SkeletonLoading';
 
 const Api_key = process.env.NEXT_PUBLIC_API_KEY;
 
