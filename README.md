@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Movie App
 
-## Getting Started
+A fully responsive, modern movie browsing app built with **Next.js 13 (App Router)**, **TypeScript**, **Tailwind CSS**, and powered by the **TMDB API**.
 
-First, run the development server:
+Explore trending, top-rated, and upcoming movies, and dive deep into detailed movie pages with cast info.
+
+---
+
+## 🚀 Features
+
+- 🔥 View **Trending**, **Top Rated**, and **Upcoming** movies  
+- 📄 Detailed **Movie Pages** with description, ratings, and cast  
+- ⚡ Optimized for **performance and SEO** with SSR  
+- 💀 Beautiful **skeleton loaders** during data fetch  
+- 📱 Fully **responsive design** using Tailwind CSS  
+- 🧠 Built using **Next.js 13 App Router architecture**
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech         | Description                           |
+|--------------|---------------------------------------|
+| Next.js 13   | React Framework for Web Development   |
+| TypeScript   | Typed JavaScript                      |
+| Tailwind CSS | Utility-first CSS framework           |
+| TMDB API     | Fetches movies, cast, and more        |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx           # Main layout
+│   ├── globals.css          # Global styles
+│   ├── page.tsx             # Home page
+│   ├── movie/[id]/          # Dynamic movie details
+│   ├── toprated/            # Top rated movies page
+│   └── upcoming/            # Upcoming movies page
+├── components/
+│   ├── Header.tsx
+│   ├── MovieCard.tsx
+│   ├── CastDetails.tsx
+│   ├── HomeClient.tsx
+│   └── SkeletonLoading.tsx
+```
+
+---
+
+## 🧪 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/madhav182004/movie-app.git
+cd movie-app
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup Environment Variables
+
+Create a `.env.local` file in the root and add:
+
+```env
+NEXT_PUBLIC_API_KEY=your_tmdb_api_key_here
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Configuration
 
-## Learn More
+### `next.config.ts`
 
-To learn more about Next.js, take a look at the following resources:
+Ensure TMDB image domains are allowed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+        pathname: '/**',
+      },
+    ],
+  },
+};
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+export default nextConfig;
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙋‍♂️ Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Madhav**
+
+- 🐙 [GitHub](https://github.com/madhav182004)
+
+---
+
+## 📬 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
